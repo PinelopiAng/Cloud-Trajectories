@@ -16,13 +16,7 @@ import io
 import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 
-#def create_download_link(val, filename):
-#    b64 = base64.b64encode(val)
-#    return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.zip">Download files</a>'
-
 # ----------------------------
-
-# TODO: add page_icon in set_page_config arguments
 
 st.set_page_config(layout="wide", initial_sidebar_state="expanded")
 
@@ -35,8 +29,7 @@ st.write("""This is the frontend for the Cloud Trajectories Project. Using the s
 host = 'postgresbase-trajectories-server.postgres.database.azure.com'
 database = 'clouddb'
 user = 'cloudadmin'
-#password = os.environ.get('SQLPASSWORD')
-password = '8650D(d/t67P@Q9'
+password = os.environ.get('SQLPASSWORD')
 sslmode = 'require'
 
 # Connect to the PostgreSQL server
@@ -49,8 +42,7 @@ conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
 
 # ------------------ Setup Azure Blob Storage connection -----------------------------------------------
 
-#connection_string = os.environ.get('BLOBCONNSTR')
-connection_string = 'DefaultEndpointsProtocol=https;AccountName=trajectoriesstorage;AccountKey=bLPV3Pnn4VsIYydSjTRuJpq3YTtVZOfTS+HMjIFzgEP+f7PvqMm8vxLCzI3Os/RL817qZojZUvwa+AStsTPJhw==;EndpointSuffix=core.windows.net'
+connection_string = os.environ.get('BLOBCONNSTR')
 container_name = "historical"
 
 # ------------------------------------------------------------------------------------------------------
