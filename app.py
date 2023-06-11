@@ -73,7 +73,7 @@ with st.sidebar:
     st.markdown("""## Tmin_B9 """)
     use_temperature = st.checkbox("Include Temperature in query?")
     if use_temperature == True:
-        temperature = st.slider("Select a range of values for `Tmin_B9`", df_a['t_min_b9'].min(), df_a['t_min_b9'].max())
+        temperature = st.slider("Select a range of values for `Tmin_B9`", int(df_a['t_min_b9'].min()), int(df_a['t_min_b9'].max()), (int(df_a['t_min_b9'].min()),int(df_a['t_min_b9'].max())))
 
     st.markdown("""## Timestamp """)
     use_datetime = st.checkbox("Include datetime information in query?")
