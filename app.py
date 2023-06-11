@@ -40,7 +40,7 @@ conn = psycopg2.connect(conn_string)
 conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
 # ------------------------------------------------------------------------------------------------------
 
-# ------------------ Setup Azure Blob Storage connection -----------------------------------------------
+# -------------------------- Setup Azure Blob Storage connection ---------------------------------------
 
 connection_string = os.environ.get('BLOBCONNSTR')
 container_name = "historical"
