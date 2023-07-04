@@ -78,11 +78,11 @@ with st.sidebar:
     st.markdown("""## Timestamp """)
     use_datetime = st.checkbox("Include datetime information in query?")
     if use_datetime == True:
-        start_date = st.date_input(label="Input start date", value= df_a['timestamp'].min().date())
-        start_time = st.time_input('Input start time', value = df_a['timestamp'].min().time())
+        start_date = st.date_input(label="Input start date")
+        start_time = st.time_input('Input start time')
         
-        end_date = st.date_input(label="Input end date", value = df_a['timestamp'].max().date(), min_value=start_date)
-        end_time = st.time_input('Input end time', value = df_a['timestamp'].max().time())
+        end_date = st.date_input(label="Input end date", min_value=start_date)
+        end_time = st.time_input('Input end time')
 
 # Here starts the SQL querying part
 
